@@ -2,27 +2,106 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Mon événement</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mariage de Claire & Thomas</title>
 
 <style>
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-    font-family:Arial,sans-serif;
-    max-width:800px;
+    font-family: Georgia, serif;
+    color:#444;
+    background:#faf7f3;
+    line-height:1.7;
+}
+
+header{
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+               url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+header h1{
+    font-size:4em;
+    margin-bottom:20px;
+}
+
+header p{
+    font-size:1.5em;
+}
+
+section{
+    max-width:900px;
     margin:auto;
-    padding:40px;
-    background:#f5f5f5;
+    padding:70px 25px;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:35px;
+    color:#b67c5c;
 }
 
 .card{
     background:white;
+    border-radius:15px;
     padding:30px;
-    border-radius:12px;
-    box-shadow:0 0 20px rgba(0,0,0,.15);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    margin-bottom:30px;
 }
 
-h1{
-    color:#2c3e50;
+.info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.info div{
+    text-align:center;
+}
+
+.button{
+    display:inline-block;
+    background:#b67c5c;
+    color:white;
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:30px;
+    margin-top:25px;
+}
+
+footer{
+    background:#b67c5c;
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+.countdown{
+    text-align:center;
+    font-size:2em;
+    color:#b67c5c;
+    font-weight:bold;
+}
+
+iframe{
+    width:100%;
+    height:350px;
+    border:none;
+    border-radius:15px;
 }
 
 </style>
@@ -31,23 +110,150 @@ h1{
 
 <body>
 
-<div class="card">
+<header>
 
-<h1>Mon événement</h1>
+<div>
 
-<p><b>Date :</b> 18 octobre 2026</p>
+<h1>Claire & Thomas</h1>
 
-<p><b>Lieu :</b> Marseille</p>
+<p>Nous nous marions !</p>
 
-<h2>Programme</h2>
-
-<ul>
-<li>18h Accueil</li>
-<li>19h Conférence</li>
-<li>20h Cocktail</li>
-</ul>
+<p>18 juillet 2026</p>
 
 </div>
+
+</header>
+
+<section>
+
+<h2>Notre histoire</h2>
+
+<div class="card">
+
+<p style="text-align:center">
+
+Après plusieurs années de bonheur, nous avons la joie de vous inviter à partager cette journée si importante pour nous.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Informations</h2>
+
+<div class="info">
+
+<div class="card">
+
+<h3>📅 Date</h3>
+
+<p>Samedi 18 juillet 2026</p>
+
+</div>
+
+<div class="card">
+
+<h3>⛪ Cérémonie</h3>
+
+<p>15h00</p>
+
+<p>Église Saint-Pierre</p>
+
+</div>
+
+<div class="card">
+
+<h3>🥂 Réception</h3>
+
+<p>À partir de 18h00</p>
+
+<p>Domaine des Oliviers</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Compte à rebours</h2>
+
+<div class="countdown" id="countdown"></div>
+
+</section>
+
+<section>
+
+<h2>Lieu</h2>
+
+<div class="card">
+
+<iframe
+src="https://www.google.com/maps?q=Paris&output=embed">
+</iframe>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Confirmer votre présence</h2>
+
+<div class="card" style="text-align:center">
+
+<p>
+
+Merci de confirmer votre présence avant le 1er juin 2026.
+
+</p>
+
+<a class="button" href="mailto:contact@mariage.fr">
+
+Confirmer ma présence
+
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+Avec tout notre amour ❤️
+
+</p>
+
+</footer>
+
+<script>
+
+const wedding = new Date("July 18, 2026 15:00:00").getTime();
+
+setInterval(function(){
+
+const now = new Date().getTime();
+
+const distance = wedding - now;
+
+const days = Math.floor(distance/(1000*60*60*24));
+
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+
+document.getElementById("countdown").innerHTML =
+days + " jours " + hours + " h " + minutes + " min";
+
+},1000);
+
+</script>
 
 </body>
 </html>
