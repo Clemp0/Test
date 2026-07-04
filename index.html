@@ -6,6 +6,8 @@
 
 <title>Mariage de Blandine & Clément</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 
 *{
@@ -15,16 +17,22 @@
 }
 
 body{
-    font-family: Georgia, serif;
-    color:#444;
-    background:#faf7f3;
-    line-height:1.7;
+    font-family:'Montserrat', sans-serif;
+    color:#495048;
+    background:#F8F5EF;
+    line-height:1.8;
 }
 
+/* TITRES */
+h1,h2,h3{
+    font-family:'Cormorant Garamond', serif;
+}
+
+/* HERO */
 header{
     height:100vh;
-    background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-               url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80");
+    background:linear-gradient(rgba(40,60,40,.45),rgba(40,60,40,.45)),
+    url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1800&q=80");
     background-size:cover;
     background-position:center;
     display:flex;
@@ -32,6 +40,7 @@ header{
     align-items:center;
     text-align:center;
     color:white;
+    padding:20px;
 }
 
 header h1{
@@ -40,61 +49,75 @@ header h1{
 }
 
 header p{
-    font-size:1.5em;
+    font-size:1.4em;
 }
 
+/* SECTIONS */
 section{
     max-width:900px;
     margin:auto;
-    padding:70px 25px;
+    padding:70px 20px;
 }
 
 h2{
     text-align:center;
     margin-bottom:35px;
-    color:#b67c5c;
+    color:#5F6F52;
+    font-size:2.2em;
 }
 
+/* CARTES */
 .card{
-    background:white;
-    border-radius:15px;
-    padding:30px;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    background:#FFFDF8;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 10px 30px rgba(95,111,82,.10);
+    border:2px solid #E7E4D7;
     margin-bottom:30px;
 }
 
-.info{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.info div{
-    text-align:center;
-}
-
+/* BOUTON */
 .button{
     display:inline-block;
-    background:#b67c5c;
+    background:#8E9F8A;
     color:white;
     text-decoration:none;
-    padding:15px 30px;
-    border-radius:30px;
+    padding:15px 35px;
+    border-radius:40px;
     margin-top:25px;
+    transition:.3s;
+    font-weight:bold;
 }
 
+.button:hover{
+    background:#5F6F52;
+}
+
+/* FOOTER */
 footer{
-    background:#b67c5c;
-    color:white;
+    background:#5F6F52;
+    color:#FFFDF8;
     text-align:center;
-    padding:40px;
+    padding:45px;
 }
 
+/* COUNTDOWN */
 .countdown{
     text-align:center;
-    font-size:2em;
-    color:#b67c5c;
+    font-size:2.3em;
+    color:#8E9F8A;
     font-weight:bold;
+}
+
+/* STYLE DIVERS */
+hr{
+    border:none;
+    border-top:2px dashed #EFCB68;
+    margin:25px 0;
+}
+
+strong{
+    color:#C9A227;
 }
 
 iframe{
@@ -105,107 +128,69 @@ iframe{
 }
 
 </style>
-
 </head>
 
 <body>
 
 <header>
-
-<div>
-<h1>Blandine & Clément</h1>
-
-<p>Nous avons le bonheur de vous inviter à notre mariage</p>
-
-<p>12 • 13 • 14 mars 2027</p>
-
-</div>
-
+    <div>
+        <h1>Blandine & Clément</h1>
+        <p>Nous avons le bonheur de vous inviter à notre mariage</p>
+        <p>12 • 13 • 14 mars 2027</p>
+    </div>
 </header>
 
 <section>
-
 <h2>Notre histoire</h2>
-
 <div class="card">
-
 <p style="text-align:center">
-
 Après plusieurs années de bonheur, nous avons la joie de vous inviter à partager cette journée si importante pour nous.
-
 </p>
-
 </div>
-
 </section>
 
 <section>
-
-<section>
-
 <h2>💍 Programme</h2>
-
 <div class="card">
 
 <h3>Vendredi 12 mars 2027</h3>
-
 <p><strong>10h00</strong> — Mariage civil à la mairie d'Avignon.</p>
-
 <p><strong>À partir de 18h00</strong> — Repas de la veille au Hameau de Valouse.</p>
 
-<hr style="margin:25px 0;">
+<hr>
 
 <h3>Samedi 13 mars 2027</h3>
-
 <p><strong>15h00</strong> — Cérémonie laïque au Hameau de Valouse.</p>
-
 <p><strong>17h00</strong> — Vin d'honneur au Hameau de Valouse.</p>
 
-<hr style="margin:25px 0;">
+<hr>
 
 <h3>Dimanche 14 mars 2027</h3>
-
-<p><strong>À partir de 10h00</strong> — Brunch au Hameau de Valouse.</p>
+<p><strong>10h00</strong> — Brunch au Hameau de Valouse.</p>
 
 </div>
-
 </section>
+
 <section>
-
 <h2>🍽️ Les repas</h2>
-
 <div class="card">
-
-<p style="text-align:center;">
-
-Nous vous proposerons prochainement le choix de votre menu.
-
-</p>
-
-<br>
+<p style="text-align:center">Menus à venir prochainement.</p>
 
 <h3>Entrée</h3>
-
 <ul>
 <li>Choix à définir</li>
 <li>Choix à définir</li>
 <li>Choix à définir</li>
 </ul>
-
-<br>
 
 <h3>Plat</h3>
-
 <ul>
 <li>Choix à définir</li>
 <li>Choix à définir</li>
 <li>Choix à définir</li>
 </ul>
 
-<br>
-
 <h3>Dessert</h3>
-
 <ul>
 <li>Pièce montée</li>
 <li>Buffet de desserts</li>
@@ -213,129 +198,59 @@ Nous vous proposerons prochainement le choix de votre menu.
 </ul>
 
 </div>
-
 </section>
+
 <section>
-
 <h2>📍 Comment venir ?</h2>
-
 <div class="card">
 
 <h3>Mariage civil</h3>
-
-<p>
-
-📍 Mairie d'Avignon
-
-</p>
-
-<br>
+<p>📍 Mairie d'Avignon</p>
 
 <h3>Cérémonie et réception</h3>
+<p>📍 Hameau de Valouse</p>
 
-<p>
-
-📍 Hameau de Valouse
-
-</p>
-
-<p>
-
-Une carte Google Maps ainsi que les informations de stationnement seront ajoutées prochainement.
-
-</p>
-
-<br>
-
-<p>
-
-🚗 Un parking sera disponible sur place.
-
-</p>
-
-<p>
-
-🚆 Gare TGV d'Avignon à proximité.
-
-</p>
-
-<p>
-
-✈️ Aéroport de Marseille Provence à environ 1 heure.
-
-</p>
+<p>Parking sur place – Gare TGV Avignon – Aéroport Marseille Provence</p>
 
 </div>
-
 </section>
 
-<h2>Compte à rebours</h2>
-
+<section>
+<h2>⏳ Compte à rebours</h2>
 <div class="countdown" id="countdown"></div>
-
 </section>
 
 <section>
-
-<h2>Lieu</h2>
-
+<h2>📍 Lieu</h2>
 <div class="card">
-
-<iframe
-src="https://www.google.com/maps/place/Hameau+de+Valouse+-+Domaine+de+Mariage+%26+S%C3%A9minaire/@44.4498977,5.1992744,17z/data=!3m1!4b1!4m6!3m5!1s0x12ca9aeeb61c92c9:0x940ddfa7ed9e7ccf!8m2!3d44.4498939!4d5.2018493!16s%2Fg%2F1td8w9m9?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D">
-</iframe>
-
+<iframe src="https://www.google.com/maps?q=Hameau+de+Valouse&output=embed"></iframe>
 </div>
-
 </section>
 
 <section>
-
-<h2>Confirmer votre présence</h2>
-
+<h2>💌 RSVP</h2>
 <div class="card" style="text-align:center">
-
-<p>
-
-Merci de confirmer votre présence avant le 1er juin 2026.
-
-</p>
-
-<a class="button" href="mailto:mariagebkcp@pm.me">
-
-Confirmer ma présence
-
-</a>
-
+<p>Merci de confirmer votre présence avant le 1er juin 2026.</p>
+<a class="button" href="mailto:mariagebkcp@pm.me">Confirmer ma présence</a>
 </div>
-
 </section>
 
 <footer>
-
-<p>
-
 Avec tout notre amour ❤️
-
-</p>
-
 </footer>
 
 <script>
 
-const wedding = new Date("July 18, 2026 15:00:00").getTime();
+const wedding = new Date("March 13, 2027 15:00:00").getTime();
 
 setInterval(function(){
 
 const now = new Date().getTime();
-
 const distance = wedding - now;
 
-const days = Math.floor(distance/(1000*60*60*24));
-
-const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-
-const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+const days = Math.floor(distance / (1000*60*60*24));
+const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
 
 document.getElementById("countdown").innerHTML =
 days + " jours " + hours + " h " + minutes + " min";
