@@ -3,18 +3,28 @@
 <title>Mariage Blandine & Clément</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-:root{--olive:#7e9551;--olive2:#657a41;--lemon:#ffeb5b;--bg:#faf9f3}
+:root{--olive:#a4b889;--olive2:#8fa26a;--lemon:#fff4a8;--bg:#fcfbf7}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Montserrat,sans-serif;color:#444}
-header{height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1800&q=80') center/cover}
+header{height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:linear-gradient(rgba(0,0,0,.28),rgba(0,0,0,.28)),url('https://images.unsplash.com/p[...]') center/cover no-repeat}
 h1,h2,h3{font-family:"Cormorant Garamond",serif}h1{font-size:4rem}section{max-width:950px;margin:auto;padding:60px 20px}
-h2{text-align:center;color:var(--olive);font-size:2.4rem}.card{background:#fff;padding:30px;border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,.08);border-top:6px solid var(--olive)}
-.timeline{border-left:4px solid var(--olive);padding-left:35px}.day{margin:40px 0}.event{display:flex;gap:20px;position:relative;margin:15px 0}.event:before{content:"";position:absolute;left:-45px;top:10px;width:16px;height:16px;background:var(--lemon);border:4px solid var(--olive);border-radius:50%}.hour{min-width:80px;font-weight:300;color:var(--olive2)}.content{background:#fffbe0;padding:12px 18px;border-radius:12px;flex:1}
-.button{display:inline-block;background:var(--olive);color:#fff;padding:14px 30px;border-radius:30px;text-decoration:none}.button:hover{background:var(--olive2)}
-.count{text-align:center;font-size:2rem;color:var(--olive)}footer{text-align:center;background:var(--olive);color:#fff;padding:30px;margin-top:40px}
-iframe{width:100%;height:320px;border:0;border-radius:15px}
+h2{text-align:center;color:var(--olive);font-size:2.4rem}.card{background:#fff;padding:30px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,.04);border-top:4px solid rgba(139,160,102,.25)}
+/* Timeline refinements: more pastel, thinner lines, refined spacing */
+.timeline{border-left:2px solid rgba(139,160,102,.25);padding-left:28px}
+.day{margin:36px 0}
+.event{display:flex;gap:18px;position:relative;margin:14px 0;align-items:flex-start}
+/* small refined dot instead of larger marker */
+.event::before{content:"";position:absolute;left:-34px;top:10px;width:10px;height:10px;border-radius:50%;background:var(--lemon);border:2px solid var(--olive2);box-shadow:0 2px 6px rgba(0,0,0,.06)}
+.hour{font-weight:600;color:var(--olive2);min-width:72px;text-align:right;font-size:0.95rem;color:#6b6b6b}
+.content{background:transparent;padding:6px 10px;border-radius:10px;color:#555;font-size:1rem}
+/* subtle separators and lighter typography */
+.day h3{margin:0 0 12px 0;font-size:1.25rem;color:#5f6b50}
+.button{display:inline-block;background:var(--olive);color:#fff;padding:12px 28px;border-radius:28px;text-decoration:none;font-weight:600}
+.button:hover{background:var(--olive2)}
+.count{text-align:center;font-size:2rem;color:var(--olive)}footer{text-align:center;background:var(--olive);color:#fff;padding:30px;margin-top:40px;border-top-left-radius:12px;border-top-right-radius:12px}
+iframe{width:100%;height:320px;border:0;border-radius:12px}
 </style></head><body>
 <header><div><h1>Blandine & Clément</h1><p>Nous avons le bonheur de vous inviter</p><p>12 • 13 • 14 mars 2027 – Hameau de Valouse</p></div></header>
-<section><h2>Préambule</h2><div class="card">Si vous lisez ce texte, c'est (normalement) que vous êtes invités à notre mariage ! Dans un premier temps, félicitation à vous, cela signifique vous comptez beaucoup pour nous. Vous trouverez ici toutes les informations pratiques pour venir et profiter de notre mariage. Toutefois, si jamais, éventuellement, il vous reste des questions, n'hésitez pas à nous contacter directement ! Bisous.</div></section>
+<section><h2>Préambule</h2><div class="card">Si vous lisez ce texte, c'est (normalement) que vous êtes invités à notre mariage ! Dans un premier temps, félicitation à vous, cela signifique v[...]</div></section>
 <section><h2>Programme</h2><div class="card"><div class="timeline">
 <div class="day"><h3>Vendredi 12 mars</h3>
 <div class="event"><div class="hour">10h00</div><div class="content">🏛️ Mariage civil à la mairie d'Avignon</div></div>
