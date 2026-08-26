@@ -9,11 +9,13 @@ header{height:90vh;display:flex;align-items:center;justify-content:center;text-a
 h1,h2,h3{font-family:"Cormorant Garamond",serif}h1{font-size:4rem}section{max-width:950px;margin:auto;padding:60px 20px}
 h2{text-align:center;color:var(--olive);font-size:2.4rem}.card{background:#fff;padding:30px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,.04);border-top:4px solid rgba(139,160,102,.25)}
 /* Timeline refinements: more pastel, thinner lines, refined spacing */
-.timeline{border-left:2px solid rgba(139,160,102,.25);padding-left:28px}
+.timeline{position:relative;padding-left:72px}
+/* vertical line centered on markers */
+.timeline::before{content:"";position:absolute;left:48px;top:0;bottom:0;width:2px;background:rgba(139,160,102,.18);transform:translateX(-50%)}
 .day{margin:36px 0}
-.event{display:flex;gap:18px;position:relative;margin:14px 0;align-items:flex-start}
-/* small refined dot instead of larger marker */
-.event::before{content:"";position:absolute;left:-34px;top:10px;width:10px;height:10px;border-radius:50%;background:var(--lemon);border:2px solid var(--olive2);box-shadow:0 2px 6px rgba(0,0,0,.06)}
+.event{display:flex;gap:18px;position:relative;margin:14px 0;align-items:center}
+/* small refined dot centered on the vertical line */
+.event::before{content:"";position:absolute;left:48px;top:50%;width:10px;height:10px;border-radius:50%;background:var(--lemon);border:2px solid var(--olive2);box-shadow:0 2px 6px rgba(0,0,0,.06);transform:translate(-50%,-50%);z-index:2}
 .hour{font-weight:600;color:var(--olive2);min-width:72px;text-align:right;font-size:0.95rem;color:#6b6b6b}
 .content{background:transparent;padding:6px 10px;border-radius:10px;color:#555;font-size:1rem}
 /* subtle separators and lighter typography */
