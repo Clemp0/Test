@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Toutes les informations pratiques pour notre mariage au Hameau de Valouse, dans la Drôme."><title>Michel &amp; Augustin — Notre mariage</title><style>
+:root {
+  color: #34451f;
+  background: #fffbed;
+  font-family: "DM Sans", sans-serif;
+  font-synthesis: none;
+  --ink: #34451f;
+  --paper: #fffbed;
+  --cream: #fff3ae;
+  --sage: #dce6b1;
+  --lemon: #f3da45;
+  --line: rgba(52, 69, 31, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--paper);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 27px 4.5vw;
+}
+
+.monogram {
+  font-family: "Italiana", serif;
+  font-size: 21px;
+  letter-spacing: 0.08em;
+}
+
+.monogram span {
+  font-size: 14px;
+  font-style: italic;
+}
+
+nav {
+  display: flex;
+  gap: clamp(20px, 3vw, 46px);
+}
+
+nav a {
+  position: relative;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+nav a::after,
+.text-link::after {
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  left: 0;
+  height: 1px;
+  content: "";
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease;
+}
+
+nav a:hover::after,
+.text-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 44% 56%;
+  overflow: hidden;
+}
+
+.hero-copy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 6vw 95px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 24px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+.footer-names {
+  font-family: "Italiana", serif;
+  font-weight: 400;
+}
+
+h1 {
+  margin: 0;
+  padding-bottom: 67px;
+  font-size: clamp(62px, 7.3vw, 112px);
+  line-height: 0.84;
+  letter-spacing: -0.05em;
+}
+
+h1 i,
+.footer-names i {
+  font-size: 0.54em;
+  font-weight: 400;
+}
+
+.hero-date {
+  margin: 0 0 4px;
+  font-family: "Italiana", serif;
+  font-size: 19px;
+  letter-spacing: 0.08em;
+}
+
+.hero-place {
+  margin: 0 0 32px;
+  color: #657269;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 49px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 27px;
+  border: 1px solid var(--ink);
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: background 200ms, color 200ms;
+}
+
+.button-dark {
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.button-dark:hover {
+  color: var(--ink);
+  background: transparent;
+}
+
+.hero-leaf {
+  position: absolute;
+  right: -10px;
+  bottom: -36px;
+  width: 125px;
+  color: #a3ae9d;
+  transform: rotate(-19deg);
+}
+
+.hero-image-wrap {
+  position: relative;
+  min-height: 620px;
+  margin: 14px 14px 14px 0;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 37%;
+  filter: saturate(0.68) contrast(0.92);
+  animation: reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.photo-note {
+  position: absolute;
+  right: 25px;
+  bottom: 20px;
+  margin: 0;
+  color: white;
+  font-family: "Italiana", serif;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 22px;
+  left: 4.5vw;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.scroll-line {
+  display: block;
+  width: 45px;
+  height: 1px;
+  background: var(--ink);
+}
+
+.section {
+  padding: 130px 9vw;
+}
+
+.story {
+  position: relative;
+  display: grid;
+  grid-template-columns: 12% 38% 1fr;
+  gap: 4%;
+  background: #fffdf4;
+}
+
+.section-number {
+  padding-top: 9px;
+  color: #879087;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.story-copy {
+  max-width: 530px;
+  padding-top: 36px;
+  color: #536058;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.9;
+}
+
+.story-copy .lead {
+  margin-top: 0;
+  color: var(--ink);
+  font-family: "Italiana", serif;
+  font-size: 24px;
+  line-height: 1.45;
+}
+
+.signature {
+  margin-top: 30px;
+  color: var(--ink);
+  font-family: "Italiana", serif;
+  font-size: 26px;
+  font-style: italic;
+}
+
+.schedule {
+  position: relative;
+  overflow: hidden;
+  background: rgb(253, 242, 175);
+}
+
+.schedule-leaf {
+  position: absolute;
+  top: -45px;
+  right: 3vw;
+  width: 180px;
+  color: rgba(36, 53, 46, 0.24);
+  transform: rotate(16deg);
+}
+
+.section-intro {
+  text-align: center;
+}
+
+.section-intro > p:last-child {
+  margin-top: 18px;
+  font-size: 11px;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.timeline {
+  display: grid;
+  max-width: 1180px;
+  margin: 70px auto 0;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline-day {
+  position: relative;
+  padding: 40px clamp(24px, 3vw, 48px) 46px;
+  border-right: 1px solid var(--line);
+}
+
+.timeline-day:last-child {
+  border: 0;
+}
+
+.timeline-day-header {
+  margin-bottom: 32px;
+}
+
+.timeline-day-header p {
+  margin: 0 0 7px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.timeline-day-header h3 {
+  margin: 0;
+  font-size: 34px;
+}
+
+.timeline-events {
+  position: relative;
+}
+
+.timeline-events::before {
+  position: absolute;
+  top: 6px;
+  bottom: 8px;
+  left: 4px;
+  width: 1px;
+  content: "";
+  background: rgba(36, 53, 46, 0.26);
+}
+
+.timeline-event {
+  position: relative;
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 17px;
+  padding: 0 0 29px 21px;
+}
+
+.timeline-event:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-event::before {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  content: "";
+  background: rgb(253, 234, 119);
+}
+
+.timeline-event .time {
+  margin: 2px 0 0;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.timeline-event h4 {
+  margin: 0 0 4px;
+  font-family: "Italiana", serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.timeline-event div > p {
+  margin: 0;
+  color: #536058;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.venue {
+  display: grid;
+  min-height: 750px;
+  grid-template-columns: 56% 44%;
+  background: #fffdf4;
+}
+
+.venue-image {
+  margin: 14px 0 14px 14px;
+  background:
+    linear-gradient(rgba(36, 53, 46, 0.04), rgba(36, 53, 46, 0.13)),
+    url("https://hameau-de-valouse.com/wp-content/uploads/2024/11/lieudereception-2.jpg")
+      center / cover;
+  filter: saturate(0.7);
+}
+
+.venue-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 11vw 8vw;
+}
+
+.venue-card h2 {
+  font-size: clamp(45px, 5vw, 72px);
+}
+
+.venue-card > p:not(.eyebrow) {
+  margin: 30px 0;
+  color: #647069;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.venue-details {
+  width: 100%;
+  margin-bottom: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.venue-details p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+  color: #647069;
+  font-size: 11px;
+}
+
+.venue-details span {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.text-link {
+  position: relative;
+  border: 0;
+  padding: 0 0 5px;
+  color: var(--ink);
+  background: transparent;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.text-link span {
+  margin-left: 12px;
+  font-size: 16px;
+}
+
+.rsvp {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  overflow: hidden;
+}
+
+.rsvp-copy > p:not(.eyebrow) {
+  max-width: 450px;
+  margin-top: 30px;
+  color: #647069;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.rsvp-leaf {
+  position: absolute;
+  bottom: -65px;
+  left: 24%;
+  width: 165px;
+  color: #aeb7a7;
+  transform: rotate(-25deg);
+}
+
+form {
+  display: grid;
+  gap: 25px;
+  align-content: start;
+  padding-top: 8px;
+}
+
+form > label,
+fieldset legend {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+input[type="text"],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  margin-top: 9px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  outline: 0;
+  padding: 11px 0;
+  color: var(--ink);
+  background: transparent;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--ink);
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 0 0 16px;
+}
+
+fieldset legend {
+  margin-bottom: 15px;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.radio input {
+  accent-color: var(--ink);
+}
+
+form .button {
+  justify-self: start;
+  margin-top: 7px;
+}
+
+.success {
+  align-self: center;
+  padding: 55px;
+  border: 1px solid var(--line);
+  text-align: center;
+}
+
+.success-mark {
+  display: flex;
+  width: 68px;
+  height: 68px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  font-family: "Italiana", serif;
+}
+
+.success h3 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.success p {
+  margin: 15px 0 27px;
+  color: #647069;
+  font-size: 13px;
+}
+
+footer {
+  display: flex;
+  min-height: 190px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 45px 6vw;
+  color: #f7f3eb;
+  background: var(--ink);
+}
+
+footer p {
+  margin: 0;
+  font-size: 9px;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+}
+
+.footer-names {
+  font-size: 29px;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 800px) {
+  .site-header {
+    position: absolute;
+    color: var(--paper);
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hero {
+    display: block;
+    min-height: 100svh;
+    color: white;
+  }
+
+  .hero::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: linear-gradient(rgba(20, 30, 25, 0.25), rgba(20, 30, 25, 0.62));
+  }
+
+  .hero-copy {
+    position: relative;
+    z-index: 2;
+    min-height: 100svh;
+    padding: 120px 25px 90px;
+  }
+
+  .hero-image-wrap {
+    position: absolute;
+    inset: 0;
+    min-height: 0;
+    margin: 0;
+  }
+
+  .hero-place {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .hero .button-dark {
+    border-color: white;
+    color: var(--ink);
+    background: white;
+  }
+
+  .photo-note,
+  .hero-leaf {
+    display: none;
+  }
+
+  .scroll-cue {
+    z-index: 3;
+    right: 0;
+    left: 0;
+    justify-content: center;
+  }
+
+  .scroll-line {
+    background: white;
+  }
+
+  .section {
+    padding: 90px 7vw;
+  }
+
+  .story {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .section-number {
+    display: none;
+  }
+
+  .story-copy {
+    padding-top: 8px;
+  }
+
+  .timeline {
+    margin-top: 55px;
+    grid-template-columns: 1fr;
+    border-bottom: 0;
+  }
+
+  .timeline-day {
+    padding: 36px 12px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .timeline-day:last-child {
+    border-bottom: 0;
+  }
+
+  .venue {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .venue-image {
+    height: 60vh;
+    min-height: 420px;
+    margin: 9px;
+  }
+
+  .venue-card {
+    padding: 85px 8vw;
+  }
+
+  .rsvp {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .rsvp-leaf {
+    display: none;
+  }
+
+  fieldset {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  footer {
+    flex-direction: column;
+    justify-content: center;
+    gap: 22px;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-image {
+    animation: none;
+  }
+}
+/* Standalone build: Tailwind/Vite directives removed. */
+</style></head><body>
+<main>
+<header class="site-header"><nav aria-label="Navigation principale"><a href="#histoire">Notre histoire</a><a href="#programme">Programme</a><a href="#lieu">Le lieu</a><a href="#rsvp">RSVP</a></nav></header>
+<section class="hero" id="accueil"><div class="hero-copy"><p class="eyebrow">nous vous invitons</p><h1>Michel <i>&amp;</i><br>Augustin</h1><p class="hero-date">Les 01 &amp; 02 Mars 2029</p><p class="hero-place">hameau de valouse - drôme provencale</p><svg class="hero-leaf" viewBox="0 0 120 180" fill="none" aria-hidden="true"><path d="M60 174C58 123 64 72 99 13" stroke="currentColor"/><path d="M71 101C94 91 103 73 105 50C85 58 74 75 71 101Z" stroke="currentColor"/><path d="M61 132C40 119 29 98 29 75C49 85 59 104 61 132Z" stroke="currentColor"/><path d="M80 67C64 55 59 37 64 18C80 29 86 46 80 67Z" stroke="currentColor"/></svg></div><div class="hero-image-wrap"><img class="hero-image" src="https://images.unsplash.com/photo-1775126964550-122cc9c1ecaf?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1400" alt="Un couple de mariés dans un jardin"><p class="photo-note">Notre plus beau chapitre commence ici</p></div><a class="scroll-cue" href="#histoire" aria-label="Découvrir la suite"><span>Défiler</span><span class="scroll-line"></span></a></section>
+<section class="story section" id="histoire"><div class="section-number">01</div><div class="story-heading"><p class="eyebrow">Une évidence</p><h2>Un petit mot</h2></div><div class="story-copy"><p>Si vous lisez ce texte, c'est (normalement) que vous êtes invités à notre mariage ! Dans un premier temps, félicitations à vous, cela signifie que vous comptez beaucoup pour nous. Vous trouverez ici toutes les informations pratiques pour venir et profiter de notre mariage. Toutefois, s'il vous reste des questions, n'hésitez pas à nous contacter directement ! Bisous.</p></div></section>
+<section class="schedule section" id="programme"><svg class="schedule-leaf" viewBox="0 0 120 180" fill="none" aria-hidden="true"><path d="M60 174C58 123 64 72 99 13" stroke="currentColor"/><path d="M71 101C94 91 103 73 105 50C85 58 74 75 71 101Z" stroke="currentColor"/><path d="M61 132C40 119 29 98 29 75C49 85 59 104 61 132Z" stroke="currentColor"/></svg><div class="section-intro"><h2>Programme</h2><p>12 — 14 mars 2027</p></div><div class="timeline">
+<article class="timeline-day"><header class="timeline-day-header"><p>Vendredi</p><h3>12 mars</h3></header><div class="timeline-events"><div class="timeline-event"><p class="time">10h00</p><div><h4>Mariage civil</h4><p>Mairie d’Avignon</p></div></div><div class="timeline-event"><p class="time">18h00</p><div><h4>Arrivée</h4><p>Au Hameau de Valouse</p></div></div><div class="timeline-event"><p class="time">19h00</p><div><h4>Repas de la veille</h4><p>Soirée pizza</p></div></div></div></article>
+<article class="timeline-day"><header class="timeline-day-header"><p>Samedi</p><h3>13 mars</h3></header><div class="timeline-events"><div class="timeline-event"><p class="time">10h00</p><div><h4>Petit déjeuner</h4><p>Brunch au domaine</p></div></div><div class="timeline-event"><p class="time">15h00</p><div><h4>Cérémonie laïque</h4><p>Dans les jardins</p></div></div><div class="timeline-event"><p class="time">17h00</p><div><h4>Vin d’honneur</h4><p>Cocktail et retrouvailles</p></div></div><div class="timeline-event"><p class="time">20h00</p><div><h4>Dîner &amp; soirée</h4><p>Jusqu’au bout de la nuit</p></div></div></div></article>
+<article class="timeline-day"><header class="timeline-day-header"><p>Dimanche</p><h3>14 mars</h3></header><div class="timeline-events"><div class="timeline-event"><p class="time">10h00</p><div><h4>Brunch</h4><p>Un dernier moment ensemble</p></div></div><div class="timeline-event"><p class="time">12h00</p><div><h4>Libération des chambres</h4><p>Départ des hébergements</p></div></div><div class="timeline-event"><p class="time">15h00</p><div><h4>Départ</h4><p>À bientôt pour la suite</p></div></div></div></article></div></section>
+<section class="venue" id="lieu"><div class="venue-image" role="img" aria-label="Le Hameau de Valouse dans la Drôme"></div><div class="venue-card"><p class="eyebrow">Rendez-vous dans la Drôme</p><h2>Le Hameau<br>de Valouse</h2><p>Hameau de Valouse<br>26110 Valouse, Drôme</p><div class="venue-details"><p><span>Département</span> Drôme · 26</p><p><span>Parking</span> Disponible sur place</p></div><a class="text-link" href="https://maps.google.com/?q=Hameau+de+Valouse+26110+Valouse" target="_blank" rel="noreferrer">Voir sur la carte <span aria-hidden="true">→</span></a></div></section>
+<section class="rsvp section" id="rsvp"><div class="rsvp-copy"><p class="eyebrow">Réponse souhaitée avant le 15 avril</p><h2>Serez-vous<br>des nôtres ?</h2><p>Votre présence rendra cette journée encore plus belle. Merci de nous confirmer votre venue à l’aide de ce formulaire.</p><svg class="rsvp-leaf" viewBox="0 0 120 180" fill="none" aria-hidden="true"><path d="M60 174C58 123 64 72 99 13" stroke="currentColor"/><path d="M71 101C94 91 103 73 105 50C85 58 74 75 71 101Z" stroke="currentColor"/><path d="M61 132C40 119 29 98 29 75C49 85 59 104 61 132Z" stroke="currentColor"/></svg></div><form id="rsvp-form"><label>Nom et prénom<input name="name" type="text" placeholder="Votre nom" required></label><fieldset><legend>Serez-vous présent·e ?</legend><label class="radio"><input name="attendance" type="radio" value="yes" required><span>Avec grand plaisir</span></label><label class="radio"><input name="attendance" type="radio" value="no" required><span>Malheureusement non</span></label></fieldset><label>Nombre de personnes<select name="guests"><option value="1">1 personne</option><option value="2">2 personnes</option><option value="3">3 personnes</option><option value="4">4 personnes</option></select></label><label>Un petit mot ou régime alimentaire<textarea name="message" rows="3" placeholder="Écrivez-nous ici…"></textarea></label><button class="button button-dark" type="submit">Envoyer ma réponse</button></form><div class="success" id="success" hidden role="status"><span class="success-mark">C &amp; T</span><h3>Merci pour votre réponse.</h3><p>Nous avons hâte de partager ce moment avec vous.</p><button class="text-link" id="edit-response" type="button">Modifier ma réponse</button></div></section>
+<footer><p class="footer-names">Camille <i>&amp;</i> Thomas</p><p>20 · 06 · 2026</p><p>Avec tout notre amour</p></footer></main>
+<script>const form=document.getElementById('rsvp-form');const success=document.getElementById('success');form.addEventListener('submit',e=>{e.preventDefault();form.hidden=true;success.hidden=false;});document.getElementById('edit-response').addEventListener('click',()=>{success.hidden=true;form.hidden=false;});</script></body></html>
